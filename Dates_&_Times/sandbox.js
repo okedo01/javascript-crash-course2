@@ -30,3 +30,22 @@ const days = Math.round(hours / 24);
 console.log(mins, hours, days);
 
 console.log(`The blog was created in ${days} days ago`);
+
+const tick = () => {
+    const now = new Date();
+
+    const h = now.getHours();
+    const m = now.getMinutes();
+    const s = now.getSeconds();
+
+    const html = `
+        <span style="font-size: 60px; color: black;">${h}</span>
+        <span style="font-size: 40px; color: black;">${m}</span>
+        <span style="font-size: 20px; color: black;">${s}</span>
+    `;
+
+    clock.innerHTML = html;
+    
+}
+
+setInterval(tick, 1000);
