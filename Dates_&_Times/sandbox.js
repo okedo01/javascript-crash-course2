@@ -49,3 +49,18 @@ const tick = () => {
 }
 
 setInterval(tick, 1000);
+
+// date fns library
+const newDate = new Date();
+
+// console.log(dateFns.isToday(newDate));
+
+console.log(dateFns.format(newDate, 'YYYY'));
+console.log(dateFns.format(newDate, 'MMMM'));
+console.log(dateFns.format(newDate, 'dddd'));
+console.log(dateFns.format(newDate, 'Do'));
+console.log(dateFns.format(newDate, 'dddd Do MMMM YYYY'));
+
+const beforeToday = new Date('Jan 25 2024 18:30:00');
+
+console.log(dateFns.distanceInWords(newDate, beforeToday, {addSuffix: true}));
