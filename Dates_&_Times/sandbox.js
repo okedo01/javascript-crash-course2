@@ -39,9 +39,9 @@ const tick = () => {
     const s = now.getSeconds();
 
     const html = `
-        <span style="font-size: 60px; color: black;">${h}</span>
-        <span style="font-size: 40px; color: black;">${m}</span>
-        <span style="font-size: 20px; color: black;">${s}</span>
+        <span style="color: black;">${h}</span> :
+        <span style="color: black;">${m}</span> :
+        <span style="color: black;">${s}</span>
     `;
 
     clock.innerHTML = html;
