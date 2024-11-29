@@ -6,10 +6,6 @@ const icon = document.querySelector('.icon img');
 
 const updateUI = (data) => {
 
-    // console.log(data);
-    // const cityDetails = data.cityDetails;
-    // const weather = data.weather;
-
     // destructure properties
     const { cityDetails, weather } = data;
 
@@ -27,14 +23,8 @@ const updateUI = (data) => {
     const iconSrc = `img/icons/${weather.WeatherIcon}.svg`;
     icon.setAttribute('src', iconSrc);
 
-    let timeSrc = '';
-    
-    if(weather.IsDayTime) {
-        timeSrc = 'img/day.svg';
-    } else {
-        timeSrc = 'img/night.svg';
-    }
-
+    // ternary operator
+    let timeSrc = weather.IsDayTime ? 'img/day.svg' : 'img/night.svg';
     time.setAttribute('src', timeSrc);
 
     // remove d-none class if present
@@ -53,6 +43,7 @@ const updateCity = async (city) => {
 }
 
 cityForm.addEventListener('submit', event => {
+
     // prevent default action
     event.preventDefault();
 
