@@ -24,3 +24,19 @@ name = localStorage.getItem("name");
 age = localStorage.getItem("age");
 
 console.log(name, age);
+
+// Stringifying & Parsing data
+const todos = [
+    {name: "Luigi", location: "Loss Angelos"},
+    {name: "Luigi", location: "New York"},
+    {name: "Luigi", location: "Araska"},
+    {name: "Luigi", location: "Mexico"}
+]
+
+// console.log(JSON.stringify(todos));
+localStorage.setItem("todos", JSON.stringify(todos));
+
+const stored = localStorage.getItem("todos");
+
+console.log(JSON.parse(stored));
+
