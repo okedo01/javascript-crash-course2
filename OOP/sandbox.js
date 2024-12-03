@@ -28,7 +28,7 @@ const userTwo = {
 
 // const userThree = new user("Sparrow", "sparrow@nida.com")
 
-class user {
+class User {
     constructor(username, email) {
         this.username = username;
         this.email = email;
@@ -49,14 +49,44 @@ class user {
     }
 }
 
-const userFour = new user("Okedo", "okedo@gmail.co.tz");
-const userFive = new user("Marvel", "marvel@gmail.nida.tz");
+const userFour = new User("Okedo", "okedo@gmail.co.tz");
+const userFive = new User("Marvel", "marvel@gmail.nida.tz");
 // const userSix = new user("Stallion", "stallion@gmail.co.tz");
 // const userSeven = new user("Sparrow", "sparrow@gmail.nida.tz");
 
 console.log(userFour, userFive);
 
-// userFour.login();
-// userFour.logout();
+userFour.login();
+userFour.logout();
 
-userFour.login().incScore().incScore().logout();
+// userFour.login().incScore().incScore().logout();
+
+class Admin extends User {
+    deleteUser(user) {
+        users = users.filter((us) => {
+            if(us.username !== user.username) {
+                return true;
+            } else {
+                return false;
+            }
+        })
+    }
+}
+
+const userEight = new Admin("sparrow", "sparrow@gmail.com");
+
+console.log(userEight);
+
+let users = [userFour, userFive, userEight];
+
+console.log(users);
+
+userEight.deleteUser(userFive);
+
+console.log(users);
+
+userEight.deleteUser(userEight);
+
+console.log(users);
+
+
