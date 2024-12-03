@@ -32,10 +32,31 @@ class user {
     constructor(username, email) {
         this.username = username;
         this.email = email;
+        this.score = 0;
+    }
+    login() {
+        console.log(`${this.username} just logged in`);
+        return this;
+    }
+    logout() {
+        console.log(`${this.username} just logged out`);
+        return this;
+    }
+    incScore() {
+        this.score += 1;
+        console.log(`${this.username} has scored ${this.score}`);
+        return this;
     }
 }
 
 const userFour = new user("Okedo", "okedo@gmail.co.tz");
 const userFive = new user("Marvel", "marvel@gmail.nida.tz");
+// const userSix = new user("Stallion", "stallion@gmail.co.tz");
+// const userSeven = new user("Sparrow", "sparrow@gmail.nida.tz");
 
 console.log(userFour, userFive);
+
+// userFour.login();
+// userFour.logout();
+
+userFour.login().incScore().incScore().logout();
