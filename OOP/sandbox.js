@@ -62,6 +62,11 @@ userFour.logout();
 // userFour.login().incScore().incScore().logout();
 
 class Admin extends User {
+    constructor(username, email, title) {
+        super(username, email);
+        this.title = title;
+    }
+
     deleteUser(user) {
         users = users.filter((us) => {
             if(us.username !== user.username) {
@@ -73,20 +78,18 @@ class Admin extends User {
     }
 }
 
-const userEight = new Admin("sparrow", "sparrow@gmail.com");
+const userEight = new Admin("sparrow", "sparrow@gmail.com", "black-belt-ninja");
 
 console.log(userEight);
 
 let users = [userFour, userFive, userEight];
 
-console.log(users);
+// console.log(users);
 
-userEight.deleteUser(userFive);
+// userEight.deleteUser(userFive);
 
-console.log(users);
+// console.log(users);
 
-userEight.deleteUser(userEight);
+// userEight.deleteUser(userEight);
 
-console.log(users);
-
-
+// console.log(users);
