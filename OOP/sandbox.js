@@ -93,3 +93,20 @@ let users = [userFour, userFive, userEight];
 // userEight.deleteUser(userEight);
 
 // console.log(users);
+
+
+// Constructors under the hood
+function Car(modelType, engineSize, capacity) {
+    this.modelType = modelType;
+    this.engineSize = engineSize;
+    this.capacity = capacity;
+
+     this.speed = function() {
+        console.log(`${this.engineSize} size has higher speed of ${this.capacity}`);
+     }
+}
+
+const distance = new Car("BMW213", "820EZ", "240km/hr");
+console.log(distance);
+
+distance.speed();
