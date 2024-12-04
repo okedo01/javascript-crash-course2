@@ -100,10 +100,10 @@ function Car(modelType, engineSize, capacity) {
     this.modelType = modelType;
     this.engineSize = engineSize;
     this.capacity = capacity;
+}
 
-     this.speed = function() {
-        console.log(`${this.engineSize} size has higher speed of ${this.capacity}`);
-     }
+Car.prototype.speed = function() {
+    console.log(`${this.engineSize} size has higher speed of ${this.capacity}`);
 }
 
 const distance = new Car("BMW213", "820EZ", "240km/hr");
